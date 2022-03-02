@@ -15,7 +15,22 @@ public class Main {
 //        options.setBinary("/usr/bin/firefox");
 
         //can call any function here
-        WebDriver driver=firefoxDriver();
+        WebDriver driver=chromeDriver();
+//        google(driver);
+        testselenium(driver);
+    }
+
+    private static void testselenium(WebDriver driver) {
+        driver.get("https://www.selenium.dev/");
+        WebElement searchbox=driver.findElement(By.cssSelector("#main_navbar > ul > li:nth-child(7) > a"));
+        searchbox.click();
+        searchbox=driver.findElement(By.id("m-blog2016-li"));
+        searchbox.click();
+        searchbox=driver.findElement(By.cssSelector("body > div > div.td-main > div > main > div:nth-child(1) > div > ul > li:nth-child(4) > div > h5 > a"));
+        searchbox.click();
+    }
+
+    public static void google( WebDriver driver){
         driver.get("http://google.com");
 
 //        document.getElementsbyName("q")[0] //this is how we inspect on chrome
