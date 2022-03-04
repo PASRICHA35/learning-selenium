@@ -30,38 +30,38 @@ public class CheckboxTest {
     @Before
     public void setup() {
         System.out.println("This will run before every Test");
-        driver=new FirefoxDriver();
+        driver = new FirefoxDriver();
         driver.get("http://localhost:8082/");
-        WebElement element=driver.findElement(By.id("checkboxLink"));
+        WebElement element = driver.findElement(By.id("checkboxLink"));
         element.click();
     }
 
     @After
-    public  void after(){
+    public void after() {
 //        System.out.println("This will run after every Test");
         driver.quit();
     }
 
     @Test
-    public void test(){
+    public void test() {
 
 
-        WebElement tick=driver.findElement(By.id("lettuceCheckbox"));
+        WebElement tick = driver.findElement(By.id("lettuceCheckbox"));
         tick.click();
         assertTrue(tick.isSelected());
 
     }
 
     @Test
-    public void test_loading_complete_message(){
+    public void test_loading_complete_message() {
         //Explicit Wait, if we get, will executed then only, otherwise wait for 10 sec.
         //By this it will wait for 10 sec in this page, driver is in checkbox page bcoz of @Before
-        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
 
         //it will take time to load on the page
-        WebElement loading=driver.findElement(By.id("message"));
-        assertEquals("Loading complete...",loading.getText());
+        WebElement loading = driver.findElement(By.id("message"));
+        assertEquals("Loading complete...", loading.getText());
 
     }
 }

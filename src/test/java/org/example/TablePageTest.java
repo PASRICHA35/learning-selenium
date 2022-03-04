@@ -9,11 +9,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-public class SelectPageTest {
+public class TablePageTest {
 
     private WebDriver driver;
 
@@ -28,7 +28,7 @@ public class SelectPageTest {
         System.out.println("This will run before every Test");
         driver = new FirefoxDriver();
         driver.get("http://localhost:8082/");
-        WebElement element = driver.findElement(By.id("selectLink"));
+        WebElement element = driver.findElement(By.id("tableLink"));
         element.click();
     }
 
@@ -39,14 +39,12 @@ public class SelectPageTest {
     }
 
     @Test
-    public void should_select_maybe_from_textbox() {
-        WebElement selectelement = driver.findElement(By.id("select1"));
-        //for selecting object in selenium
-        Select select = new Select(selectelement);
-
-        select.selectByValue("maybe");
+    public void test_table() {
 
 
-        assertEquals("maybe", selectelement.getAttribute("value"));
+        WebElement tick = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td"));
+//        assert(tick.isSelected());
+        assertEquals("Table 2 Row 2",tick.getText());
+
     }
 }

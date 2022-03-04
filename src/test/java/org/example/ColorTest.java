@@ -32,23 +32,23 @@ public class ColorTest {
     @Before
     public void setup() {
         System.out.println("This will run before every Test");
-        driver=new FirefoxDriver();
+        driver = new FirefoxDriver();
         driver.get("http://localhost:8082/");
-        WebElement element=driver.findElement(By.id("radioLink"));
+        WebElement element = driver.findElement(By.id("radioLink"));
         element.click();
     }
 
     @After
-    public  void after(){
+    public void after() {
 //        System.out.println("This will run after every Test");
         driver.quit();
     }
 
     @Test
-    public void test(){
+    public void test() {
 
 
-        List<WebElement> list=driver.findElements(By.name("color"));
+        List<WebElement> list = driver.findElements(By.name("color"));
         WebElement color = null;
         for (WebElement webElement : list) {
             if (Objects.equals(webElement.getAttribute("value"), "blue")) {
