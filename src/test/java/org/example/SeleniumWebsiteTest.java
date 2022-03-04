@@ -1,6 +1,7 @@
 package org.example;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -34,6 +35,12 @@ public class SeleniumWebsiteTest {
         blog.click();
     }
 
+    @After
+    public  void after(){
+        System.out.println("This will run after every Test");
+        driver.quit();
+    }
+
     @Test
     public void test_selenium_dot_dev_blog_2016_page(){
 //        WebDriverManager.firefoxdriver().setup();
@@ -54,7 +61,7 @@ public class SeleniumWebsiteTest {
         String title=driver.getTitle();
         assertEquals("Blog Posts - 2016 | Selenium",title);
 
-        driver.quit();
+//        driver.quit();
     }
 
     @Test
@@ -73,7 +80,7 @@ public class SeleniumWebsiteTest {
         String title=driver.getTitle();
         assertEquals("Blog Posts - 2017 | Selenium",title);
 
-        driver.quit();
+//        driver.quit();
 
     }
 }
