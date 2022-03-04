@@ -54,6 +54,7 @@ public class CheckboxTest {
 
     @Test
     public void test_loading_complete_message(){
+        //Explicit Wait, if we get, will executed then only, otherwise wait for 10 sec.
         //By this it will wait for 10 sec in this page, driver is in checkbox page bcoz of @Before
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
