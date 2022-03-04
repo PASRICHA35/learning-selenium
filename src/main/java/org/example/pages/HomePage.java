@@ -7,7 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
 
-    private WebDriver driver;
+//    private WebDriver driver;
+    WebDriver driver;
 
     @FindBy(id = "checkboxLink")
     WebElement checkboxLink;
@@ -23,7 +24,7 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void navigate() {
+    public void gotoHome() {
         driver.get("http://localhost:8082");
     }
 

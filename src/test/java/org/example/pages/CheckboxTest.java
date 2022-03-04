@@ -11,7 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class CheckboxTest {
 
     private WebDriver driver;
-    HomePage home;
+    CheckboxPage checkboxPage;
 
     @BeforeClass
     public static void init() {
@@ -21,8 +21,9 @@ public class CheckboxTest {
     @Before
     public void setup() {
         driver = new FirefoxDriver();
-        home = new HomePage(driver);
-        home.navigate();
+        checkboxPage = new CheckboxPage(driver);
+        checkboxPage.gotoHome();
+        checkboxPage.navigateToCheckboxPage();
     }
 
     @After
@@ -32,7 +33,8 @@ public class CheckboxTest {
 
     @Test
     public void test_lettuce_checkbox_selected() {
-        home.navigateToRadioPage();
+        checkboxPage.enableLettuceCheckBox();
+        checkboxPage.verifyLettuceIsChecked();
     }
 
 
