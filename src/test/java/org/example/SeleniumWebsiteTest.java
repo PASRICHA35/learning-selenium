@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static org.junit.Assert.*;
 
-public class Test {
+public class SeleniumWebsiteTest {
 
 
     @org.junit.Test
