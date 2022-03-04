@@ -15,7 +15,7 @@ public class Main {
 //        options.setBinary("/usr/bin/firefox");
 
         //can call any function here
-        WebDriver driver=chromeDriver();
+        WebDriver driver=firefoxDriver();
 //        google(driver);
         testselenium(driver);
     }
@@ -41,7 +41,7 @@ public class Main {
         WebElement element=driver.findElement(By.linkText("Fall Selenium Conf, Save the Date & Call for Speakers!"));
         element.click();
 
-
+//        driver.close(); //only for current window
 //        driver.quit(); //for all the windowws
     }
 
