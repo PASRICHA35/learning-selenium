@@ -22,12 +22,27 @@ public class Main {
 
     private static void testselenium(WebDriver driver) {
         driver.get("https://www.selenium.dev/");
-        WebElement searchbox=driver.findElement(By.cssSelector("#main_navbar > ul > li:nth-child(7) > a"));
-        searchbox.click();
-        searchbox=driver.findElement(By.id("m-blog2016-li"));
-        searchbox.click();
-        searchbox=driver.findElement(By.cssSelector("body > div > div.td-main > div > main > div:nth-child(1) > div > ul > li:nth-child(4) > div > h5 > a"));
-        searchbox.click();
+//       by me
+//        WebElement searchbox=driver.findElement(By.cssSelector("#main_navbar > ul > li:nth-child(7) > a"));
+//        searchbox.click();
+//        searchbox=driver.findElement(By.id("m-blog2016-li"));
+//        searchbox.click();
+//        searchbox=driver.findElement(By.cssSelector("body > div > div.td-main > div > main > div:nth-child(1) > div > ul > li:nth-child(4) > div > h5 > a"));
+//        searchbox.click();
+
+        //by sir
+
+        WebElement blog=driver.findElement(By.linkText("Blog"));
+        blog.click();
+
+        WebElement link2016=driver.findElement(By.id("m-blog2016"));
+        link2016.click();
+
+        WebElement element=driver.findElement(By.linkText("Fall Selenium Conf, Save the Date & Call for Speakers!"));
+        element.click();
+
+
+//        driver.quit(); //for all the windowws
     }
 
     public static void google( WebDriver driver){
